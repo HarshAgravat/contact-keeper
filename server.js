@@ -2,7 +2,10 @@ import express from 'express';
 import users from './routes/users.js';
 import contacts from './routes/contacts.js';
 import auth from './routes/auth.js';
+import connectDB from './config/db.js';
+
 const app = express();
+connectDB();
 
 app.get('/', (req, res) => res.send({ msg: 'Contact Keeper API' }));
 
